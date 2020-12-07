@@ -841,7 +841,7 @@ public class ReactViewGroup extends ViewGroup
                     Math.max(bottomLeftBorderRadius - borderWidth.bottom, 0),
                   },
                   Path.Direction.CW);
-              // for sdk 24-28 fix issue with clipPath and LAYER_TYPE_NONE
+              // PATCH: for sdk 24-28 fix issue with clipPath and LAYER_TYPE_NONE
               // https://github.com/facebook/react-native/pull/28881
               // https://github.com/facebook/react-native/issues/18266
               if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N

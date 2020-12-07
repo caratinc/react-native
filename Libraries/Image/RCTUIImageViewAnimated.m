@@ -266,6 +266,10 @@ static NSUInteger RCTDeviceFreeMemory() {
 
 - (void)displayLayer:(CALayer *)layer
 {
+  // PATCH: https://github.com/facebook/react-native/issues/29279
+  if (!_currentFrame) {
+    _currentFrame = self.image;
+  }
   if (_currentFrame) {
     layer.contentsScale = self.animatedImageScale;
     layer.contents = (__bridge id)_currentFrame.CGImage;
